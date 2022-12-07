@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+ .cube {
+     position: relative;
+}
+ .cube_side {
+     transition: transform 0.3s;
+     backface-visibility: hidden;
+     width: 320px;
+     position: absolute;
+     box-sizing: border-box;
+     transform: translateZ(160px) rotateY(90deg);
+}
+ .cube_side-front {
+     display: block;
+     transform: translateZ(160px);
+}
+ .cube_side-right {
+     display: block;
+     transform: rotateY(90deg) translateZ(160px);
+}
+ .cube_side-left {
+     display: block;
+     transform: rotateY(-90deg) translateZ(160px);
+}
+ .design {
+     display: flex;
+}
+ .design_page {
+     background: rgba(255, 255, 255, 0.3);
+     padding: 20px;
+}
+ .design_heading {
+     text-align: center;
+}
+ .design_input {
+     padding: 15px 10px;
+     border: solid 1px #f1f1f1;
+     display: block;
+     box-sizing: border-box;
+     width: 100%;
+     margin: 10px 0;
+     border-radius: 4px;
+}
+ .design_btn {
+     border-radius: 4px;
+     box-sizing: border-box;
+     padding: 15px;
+     border: none;
+     background-color: #600;
+     color: #fff;
+     width: 100%;
+     margin: 1em 0;
+     cursor: pointer;
+     outline: none;
+}
+ .design_btn-half {
+     width: 49%;
+}
+ html, body {
+     height: 100%;
+     margin: 0;
+     width: 100%;
+}
+ .instruction {
+     margin-top: 20px;
+}
+ .instruction_link {
+     text-decoration: none !important;
+     color: #fff !important;
+}
+ body {
+     font-family: 'Raleway', arial, verdana;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     background: #f4e29c;
+     background: -moz-linear-gradient(-45deg, rgba(244, 226, 156, 0) 0%, rgba(59, 41, 58, 1) 100%), -moz-linear-gradient(left, rgba(244, 226, 156, 1) 0%, rgba(130, 96, 87, 1) 100%);
+     background: -webkit-linear-gradient(-45deg, rgba(244, 226, 156, 0) 0%, rgba(59, 41, 58, 1) 100%), -webkit-linear-gradient(left, rgba(244, 226, 156, 1) 0%, rgba(130, 96, 87, 1) 100%);
+     background: -o-linear-gradient(-45deg, rgba(244, 226, 156, 0) 0%, rgba(59, 41, 58, 1) 100%), -o-linear-gradient(left, rgba(244, 226, 156, 1) 0%, rgba(130, 96, 87, 1) 100%);
+     background: -ms-linear-gradient(-45deg, rgba(244, 226, 156, 0) 0%, rgba(59, 41, 58, 1) 100%), -ms-linear-gradient(left, rgba(244, 226, 156, 1) 0%, rgba(130, 96, 87, 1) 100%);
+     background: linear-gradient(135deg, rgba(244, 226, 156, 0) 0%, rgba(59, 41, 58, 1) 100%), linear-gradient(to right, rgba(244, 226, 156, 1) 0%, rgba(130, 96, 87, 1) 100%);
+}
