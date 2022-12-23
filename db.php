@@ -11,6 +11,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+else{
+  echo "Done";
+}
 $fname =$_POST['f_name'];
 $lname =$_POST['l_name'];
 $password =$_POST['f_pass'];
@@ -18,7 +21,26 @@ $email =$_POST['f_email'];
 $phone =$_POST['f_pno'];
 // $status =$_POST['n_msg'];
 echo $fname;
-$sql="INSERT INTO `user_data`(`id`, `f_name`, `l_name`, `password`, `email`, `phone`) VALUES ('','".$fname."','".$lname."','".$password."','".$email."','".$phone."')";
+$sql ="SELECT * FROM `user_data` where email = '$email' ";
+// echo $sql;
+$result = mysqli_query($conn, $sql);
+if($result)
+{
+  $message = "Email already exits";
+  echo "
+            <script>
+              alert('Email already exists')
+          
+            </script>";
+}
+else
+{
+$sql="INSERT INTO `user_data`( `f_name`, `l_name`, `password`, `email`, `phone`) VALUES ('".$fname."','".$lname."','".$password."','".$email."','".$phone."')";
+$res = mysqli_query($conn, $sql);
+$message ="Sucessfully register";
+}
+echo $message;
+// $sql="INSERT INTO `user_data`(`f_name`, `l_name`, `password`, `email`, `phone`) VALUES ('".$fname."','".$lname."','".$password."','".$email."','".$phone."')";
 // $res = mysqli_query($conn, $sql);
 // print_r($sql);exit;
 
